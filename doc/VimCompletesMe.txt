@@ -25,6 +25,7 @@ following options:
 
 |'b:vcm_tab_complete'|          Use a specific type of completion.
 |'g:vcm_direction'|             Controls the direction of the completion.
+|'g:vcm_s_tab_behavior'|        Controls the behavior of Shift-Tab.
 
 ------------------------------------------------------------------------------
                                                           *'b:vcm_tab_complete'*
