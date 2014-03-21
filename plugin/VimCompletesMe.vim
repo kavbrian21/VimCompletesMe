@@ -55,6 +55,8 @@ function! s:vimCompletesMe(direction)
         return "\<C-x>\<C-]>"
     elseif map ==? "dict"
         return "\<C-x>\<C-k>"
+    elseif map ==? "vim"
+        return "\<C-x>\<C-v>"
     else
         return "\<C-x>" . dirs[!dir]
     endif
