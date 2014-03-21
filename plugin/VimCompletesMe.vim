@@ -15,7 +15,7 @@ if !exists ('g:vcm_s_tab_behavior')
 endif
 
 if !exists('g:vcm_direction')
-    let vcm_direction = 'n'
+    let g:vcm_direction = 'n'
 endif
 
 " Functions: {{{1
