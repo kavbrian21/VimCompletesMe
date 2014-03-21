@@ -15,7 +15,7 @@ Help on using VimCompletesMe                                   *VimCompletesMe*
 VimCompletesMe is a tab completion plugin for Vim with minimalism in mind.
 
 It will use Vim's |ins-completion| to provide tab completion and you can
-configure VimCompletesMe to use a specific type of configuration.
+configure VimCompletesMe to use a specific type of completions.
 
 ==============================================================================
 2. CONFIGURATION                                 *VimCompletesMe-configuration*
@@ -32,7 +32,7 @@ following options:
 Values: string                                                                ~
 Default: ''                                                                   ~
 
-Controls the type of completion to use. If empty, the *<Tab>* key will
+Controls the type of completion to use. If empty, the |<Tab>| key will
 intelligently (depending on the context) use:
 
 1. Local keyword completion (|i_Ctrl-X_Ctrl-N|)
@@ -64,7 +64,7 @@ Values: string                                                                ~
 Default: 'n'                                                                  ~
 
 Controls the direction of tab completion. By default, if a popup menu is
-opened during completion, the *<Tab>* key will cycle forward through the list.
+opened during completion, the |<Tab>| key will cycle forward through the list.
 
 You can change it to cycle backwards through the list by putting the following
 in your |vimrc|:
@@ -78,9 +78,9 @@ Default: 0                                                                    ~
 
 Controls the shift-tab behavior used by VimCompletesMe.
 
-By default, pressing *<S-Tab>* after a space will de-indent the line.
+By default, pressing |<S-Tab>| after a space will de-indent the line.
 
-If you change this option to 1, *<S-Tab>* will work just like *<Tab>*
+If you change this option to 1, |<S-Tab>| will work just like |<Tab>|
 
 You can change this variable by putting the following in your |vimrc|:
 
