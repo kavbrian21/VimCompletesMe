@@ -34,7 +34,7 @@ function! s:vimCompletesMe(type)
 
     let pos = getpos('.')
     let substr = matchstr(strpart(getline(pos[1]), 0, pos[2]-1), "[^ \t]*$")
-    if (strlen(substr) == 0)
+    if strlen(substr) == 0
         if a:type ==? "shift_tab" && !g:vcm_s_tab_behavior
             return "\<C-d>"
         else
