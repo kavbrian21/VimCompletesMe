@@ -19,19 +19,27 @@ if !exists('g:vcm_direction')
 endif
 
 " Functions: {{{1
-function! s:vimCompletesMe()
+function! s:vimCompletesMe(type)
     let dirs = ["\<c-p>", "\<c-n>"]
     let dir = g:vcm_direction =~? '[nf]'
     let map = exists('b:vcm_tab_complete') ? b:vcm_tab_complete : ''
 
     if pumvisible()
-        return dirs[dir]
+        if a:type ==? "shift_tab"
+            return dirs[!dir]
+        else
+            return dirs[dir]
+        endif
     endif
 
     let pos = getpos('.')
     let substr = matchstr(strpart(getline(pos[1]), 0, pos[2]-1), "[^ \t]*$")
     if (strlen(substr) == 0)
-        return "\<tab>"
+        if a:type ==? "shift_tab" && !g:vcm_s_tab_behavior
+            return "\<C-d>"
+        else
+            return "\<tab>"
+        endif
     endif
 
     let period = match(substr, '\.') != -1
@@ -63,5 +71,5 @@ function! s:vimCompletesMe()
 endfunction
 
 " Maps: {{{1
-inoremap <expr> <Tab> <SID>vimCompletesMe()
-inoremap <expr> <S-Tab> <SID>vimCompletesMe()
+inoremap <expr> <Tab> <SID>vimCompletesMe("")
+inoremap <expr> <S-Tab> <SID>vimCompletesMe("shift_tab")
