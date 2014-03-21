@@ -57,5 +57,5 @@ function! s:vimCompletesMe(direction, mapping)
 endfunction
 
 " Maps: {{{1
-inoremap <expr> <Tab> :call <SID>vimCompletesMe('n', get(b:, 'tab_complete', ''))<CR>
-inoremap <expr> <S-Tab> :call <SID>vimCompletesMe('p', get(b:, 'tab_complete', ''))<CR>
+inoremap <expr> <Tab> <SID>vimCompletesMe('n', get(b:, 'tab_complete', ''))
+inoremap <expr> <S-Tab> <SID>vimCompletesMe('p', get(b:, 'tab_complete', ''))
