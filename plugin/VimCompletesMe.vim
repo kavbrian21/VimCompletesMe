@@ -10,20 +10,19 @@ endif
 let g:loaded_VimCompletesMe = 1
 
 " Options: {{{1
-if !exists('g:VimCompletesMe_stab_deindent')
-    let g:VimCompletesMe_stab_deindent = 0
+if !exists ('g:vcm_s_tab_behavior')
+    let g:vcm_s_tab_behavior = 0
+endif
+
+if !exists('g:vcm_direction')
+    let vcm_direction = 'n'
 endif
 
 " Functions: {{{1
 function! s:vimCompletesMe(direction)
     let dirs = ["\<c-p>", "\<c-n>"]
     let dir = a:direction =~? '[nf]'
-
-    if exists('b:tab_complete')
-        let map = b:tab_complete
-    else
-        let map = ''
-    endif
+    let map = exists('b:vcm_tab_complete') ? b:vcm_tab_complete : ''
 
     if pumvisible()
         return dirs[dir]
