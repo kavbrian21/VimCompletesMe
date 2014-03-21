@@ -15,10 +15,15 @@ if !exists('g:VimCompletesMe_stab_deindent')
 endif
 
 " Functions: {{{1
-function! s:vimCompletesMe(direction, mapping)
+function! s:vimCompletesMe(direction)
     let dirs = ["\<c-p>", "\<c-n>"]
     let dir = a:direction =~? '[nf]'
-    let map = a:mapping
+
+    if exists('b:tab_complete')
+        let map = b:tab_complete
+    else
+        let map = ''
+    endif
 
     if pumvisible()
         return dirs[dir]
@@ -57,5 +62,5 @@ function! s:vimCompletesMe(direction, mapping)
 endfunction
 
 " Maps: {{{1
-inoremap <expr> <Tab> <SID>vimCompletesMe('n', get(b:, 'tab_complete', ''))
-inoremap <expr> <S-Tab> <SID>vimCompletesMe('p', get(b:, 'tab_complete', ''))
+inoremap <expr> <Tab> <SID>vimCompletesMe('n')
+inoremap <expr> <S-Tab> <SID>vimCompletesMe('p')
