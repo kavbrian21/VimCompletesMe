@@ -19,9 +19,9 @@ if !exists('g:vcm_direction')
 endif
 
 " Functions: {{{1
-function! s:vimCompletesMe(direction)
+function! s:vimCompletesMe()
     let dirs = ["\<c-p>", "\<c-n>"]
-    let dir = a:direction =~? '[nf]'
+    let dir = g:vcm_direction =~? '[nf]'
     let map = exists('b:vcm_tab_complete') ? b:vcm_tab_complete : ''
 
     if pumvisible()
@@ -63,5 +63,5 @@ function! s:vimCompletesMe(direction)
 endfunction
 
 " Maps: {{{1
-inoremap <expr> <Tab> <SID>vimCompletesMe('n')
-inoremap <expr> <S-Tab> <SID>vimCompletesMe('p')
+inoremap <expr> <Tab> <SID>vimCompletesMe()
+inoremap <expr> <S-Tab> <SID>vimCompletesMe()
