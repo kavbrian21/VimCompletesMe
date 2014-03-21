@@ -71,6 +71,21 @@ in your *vimrc*
     let g:vcm_direction = 'p'
 
 ------------------------------------------------------------------------------
+                                                        *'g:vcm_s_tab_behavior'*
+Values: numeric                                                                ~
+Default: 0                                                                     ~
+
+Controls the shift-tab behavior used by VimCompletesMe.
+
+By default, pressing *<S-Tab>* after a space will de-indent the line.
+
+If you change this option to 1, *<S-Tab>* will work just like *<Tab>*
+
+You can change this variable by putting the following in your |vimrc|:
+
+    let g:vcm_s_tab_behavior = 1
+
+------------------------------------------------------------------------------
 
 Template From: https://github.com/dahu/Area-41/
 "vim:tw=78:et:ft=help:norl:
