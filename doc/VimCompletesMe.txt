@@ -70,7 +70,7 @@ You can change it to cycle backwards through the list by putting the following
 in your |vimrc|:
 >
     let g:vcm_direction = 'p'
-
+<
 ------------------------------------------------------------------------------
                                                        *'g:vcm_s_tab_behavior'*
 Values: numeric                                                               ~
