@@ -20,7 +20,7 @@ configure VimCompletesMe to use a specific type of completions.
 ==============================================================================
 2. CONFIGURATION                                 *VimCompletesMe-configuration*
 
-The following aspects of VimCompletesMe's behavior are configurate using the
+The following aspects of VimCompletesMe's behavior are configurable using the
 following options:
 
 |'b:vcm_tab_complete'|          Use a specific type of completion.
@@ -78,9 +78,10 @@ Default: 0                                                                    ~
 
 Controls the shift-tab behavior used by VimCompletesMe.
 
-By default, pressing |<S-Tab>| after a space will de-indent the line.
+By default, pressing |<S-Tab>| after a space, or a tab will de-indent the
+current line.
 
-If you change this option to 1, |<S-Tab>| will work just like |<Tab>|
+If you change this option to 1, |<S-Tab>| will work just like |<Tab>|.
 
 You can change this variable by putting the following in your |vimrc|:
 >
@@ -89,4 +90,4 @@ You can change this variable by putting the following in your |vimrc|:
 ------------------------------------------------------------------------------
 
 Template From: https://github.com/dahu/Area-41/
-"vim:tw=78:et:ft=help:norl:
+vim:tw=78:et:ft=help:norl:
