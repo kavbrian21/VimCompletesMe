@@ -23,7 +23,7 @@ function! s:vimCompletesMe(type)
     let dirs = ["\<c-p>", "\<c-n>"]
     let dir = g:vcm_direction =~? '[nf]'
     let map = exists('b:vcm_tab_complete') ? b:vcm_tab_complete : ''
-    let shift_exists = (a:type ==? "shift_tab") ? 1 : 0
+    let shift_exists = a:type ==? "shift_tab"
 
     if pumvisible()
         if shift_exists
