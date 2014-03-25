@@ -10,7 +10,7 @@ endif
 let g:loaded_VimCompletesMe = 1
 
 " Options: {{{1
-if !exists ('g:vcm_s_tab_behavior')
+if !exists('g:vcm_s_tab_behavior')
     let g:vcm_s_tab_behavior = 0
 endif
 
