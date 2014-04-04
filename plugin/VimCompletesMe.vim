@@ -44,7 +44,11 @@ function! s:vimCompletesMe(type)
     endif
 
     let period = match(substr, '\.') != -1
-    let file_pattern = match(substr, '\/') != -1
+    if has('win32') || has('win64')
+        let file_pattern = match(substr, '\\') != -1
+    else
+        let file_pattern = match(substr, '\/') != -1
+    endif
 
     if file_pattern
         return "\<C-x>\<C-f>"
