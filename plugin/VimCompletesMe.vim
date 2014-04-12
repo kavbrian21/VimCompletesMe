@@ -66,6 +66,8 @@ function! s:vimCompletesMe(type)
         return "\<C-x>\<C-u>"
     elseif map ==? "tags"
         return "\<C-x>\<C-]>"
+    elseif map ==? "omni"
+        return "\<C-x>\<C-o>"
     elseif map ==? "dict"
         return "\<C-x>\<C-k>"
     elseif map ==? "vim"

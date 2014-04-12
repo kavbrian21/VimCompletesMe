@@ -28,7 +28,7 @@ autocommand:
 
     autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
 
-Striving for minimalism, this plugin weighs under 60 lines of code.
+Striving for minimalism, this plugin weighs under 70 lines of code.
 
 
 ## Installation
