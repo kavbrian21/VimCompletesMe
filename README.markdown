@@ -10,9 +10,10 @@ Without configuration, the Tab key will:
 * Complete a file path
   ([Ctrl-X_Ctrl-F](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-F))
 * Offer omni-completion after typing a period.
-  ([Ctrl-X_Ctrl-O](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
+  ([Ctrl-X_Ctrl-O](htbtp://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
 
-With a `b:vcm_tab_complete` variable, the Tab key will complete using:
+VimCompletesMe offers a `b:vcm_tab_complete` variable to set the following type of
+completions:
 
 * Dictionary words
   ([Ctrl-X_Ctrl-K](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-K))
@@ -22,6 +23,8 @@ With a `b:vcm_tab_complete` variable, the Tab key will complete using:
   ([Ctrl-X_Ctrl-\]](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-]))
 * Vim command line
   ([Ctrl-X_Ctrl-V](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-V))
+* Omni completion
+  ([Ctrl-X_Ctrl-O](htbtp://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
 
 You can set the `b:vcm_tab_complete` variable interactively, or in an
 autocommand:
@@ -53,7 +56,7 @@ Striving for minimalism, this plugin weighs under 70 lines of code.
         mv plugin/* ~/.vim/plugin/
         mv doc/* ~/.vim/doc/
 
-    Once the help tags have been generated, you can read the manual with 
+    Once the help tags have been generated, you can read the manual with
     `:help VimCompletesMe`.
 
 ## Thanks
