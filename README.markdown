@@ -10,7 +10,7 @@ Without configuration, the Tab key will:
 * Complete a file path
   ([Ctrl-X_Ctrl-F](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-F))
 * Offer omni-completion after typing a period.
-  ([Ctrl-X_Ctrl-O](htbtp://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
+  ([Ctrl-X_Ctrl-O](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
 
 VimCompletesMe offers a `b:vcm_tab_complete` variable to set the following type of
 completions:
@@ -20,11 +20,11 @@ completions:
 * User-defined completion
   ([Ctrl-X_Ctrl-U](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-U))
 * Tags
-  ([Ctrl-X_Ctrl-\]](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-]))
+  ([Ctrl-X_Ctrl-\]](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-])
 * Vim command line
   ([Ctrl-X_Ctrl-V](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-V))
 * Omni completion
-  ([Ctrl-X_Ctrl-O](htbtp://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
+  ([Ctrl-X_Ctrl-O](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
 
 You can set the `b:vcm_tab_complete` variable interactively, or in an
 autocommand:
