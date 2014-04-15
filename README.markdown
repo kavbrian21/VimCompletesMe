@@ -3,13 +3,13 @@
 A super simple, super minimal, super light-weight tab-completion plugin for Vim.
 
 
-Without configuration, the Tab key will:
+Without configuration, the Tab key will, depending on the context, offer:
 
-* Use Vim's local keyword completion
+* Vim's local keyword completion
   ([Ctrl-X_Ctrl-N](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-N))
-* Complete a file path
+* File path completion when typing a path
   ([Ctrl-X_Ctrl-F](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-F))
-* Offer omni-completion after typing a period.
+* Omni-completion after typing a period.
   ([Ctrl-X_Ctrl-O](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
 
 VimCompletesMe offers a `b:vcm_tab_complete` variable to set the following type of
