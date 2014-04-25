@@ -12,8 +12,8 @@ Without configuration, the Tab key will, depending on the context, offer:
 * Omni-completion after typing a period.
   ([Ctrl-X_Ctrl-O](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
 
-VimCompletesMe offers a `b:vcm_tab_complete` variable to set the following type of
-completions:
+With a `b:vcm_tab_complete` variable, you can set the Tab key to use the
+following type of completions:
 
 * Dictionary words
   ([Ctrl-X_Ctrl-K](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-K))
