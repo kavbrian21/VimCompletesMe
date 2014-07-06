@@ -41,7 +41,7 @@ paste:
 
     cd ~/.vim/bundle && git clone git://github.com/ajh17/VimCompletesMe.git
 
-Once the helptags have been generated, see `:h vim-fist` for usage.
+Once the helptags have been generated, see `:h VimCompletesMe` for usage.
 
 ## Thanks
 * [bairui](https://github.com/dahu) for helping me with this plugin, and for
