@@ -32,22 +32,17 @@ function! s:vim_completes_me(shift_tab)
     endif
   endif
 
+  " Figure out whether we should indent.
   let pos = getpos('.')
   let substr = matchstr(strpart(getline(pos[1]), 0, pos[2]-1), "[^ \t]*$")
   if strlen(substr) == 0
-    if a:shift_tab && !g:vcm_s_tab_behavior
-      return "\<C-d>"
-    else
-      return "\<tab>"
-    endif
+    return (a:shift_tab && !g:vcm_s_tab_behavior) ? "\<C-d>" : "\<Tab>"
   endif
 
+  " Figure out if user has started typing a path or a period
   let period = match(substr, '\.') != -1
-  if has('win32') || has('win64')
-    let file_pattern = match(substr, '\\') != -1
-  else
-    let file_pattern = match(substr, '\/') != -1
-  endif
+  let file_path = (has('win32') || has('win64')) ? '\\' : '\/'
+  let file_pattern = match(substr, file_path) != -1
 
   if file_pattern
     return "\<C-x>\<C-f>"
@@ -61,6 +56,7 @@ function! s:vim_completes_me(shift_tab)
     return exp
   endif
 
+  " Fallback
   if map ==? "user"
     return "\<C-x>\<C-u>"
   elseif map ==? "tags"
