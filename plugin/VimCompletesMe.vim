@@ -19,7 +19,7 @@ if !exists('g:vcm_direction')
 endif
 
 " Functions: {{{1
-function! s:vimCompletesMe(shift_tab)
+function! s:vim_completes_me(shift_tab)
   let dirs = ["\<c-p>", "\<c-n>"]
   let dir = g:vcm_direction =~? '[nf]'
   let map = exists('b:vcm_tab_complete') ? b:vcm_tab_complete : ''
@@ -77,5 +77,5 @@ function! s:vimCompletesMe(shift_tab)
 endfunction
 
 " Maps: {{{1
-inoremap <expr> <Tab> <SID>vimCompletesMe(0)
-inoremap <expr> <S-Tab> <SID>vimCompletesMe(1)
+inoremap <expr> <Tab> <SID>vim_completes_me(0)
+inoremap <expr> <S-Tab> <SID>vim_completes_me(1)
