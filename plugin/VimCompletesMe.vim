@@ -56,7 +56,14 @@ function! s:vim_completes_me(shift_tab)
     return exp
   endif
 
+  " First fallback to keyword completion if special completion was already tried.
+  if b:completion_tried
+    let b:completion_tried = 0
+    return "\<C-e>" . dirs[!dir]
+  endif
+
   " Fallback
+  let b:completion_tried = 1
   if map ==? "user"
     return "\<C-x>\<C-u>"
   elseif map ==? "tags"
@@ -75,3 +82,9 @@ endfunction
 " Maps: {{{1
 inoremap <expr> <Tab> <SID>vim_completes_me(0)
 inoremap <expr> <S-Tab> <SID>vim_completes_me(1)
+
+" Autocmds {{{1
+augroup VCM
+  autocmd!
+  autocmd InsertEnter * let b:completion_tried = 0
+augroup END
