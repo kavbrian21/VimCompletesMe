@@ -26,6 +26,10 @@ following type of completions:
 * Omni completion
   ([Ctrl-X_Ctrl-O](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
 
+VimCompletesMe will even switch to keyword completion if none of the above
+completions has any results. Simply hitting Tab again will switch the context
+to keyword completion.
+
 You can set the `b:vcm_tab_complete` variable interactively, or in an
 autocommand:
 
