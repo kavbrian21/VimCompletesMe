@@ -103,7 +103,7 @@ You can change this variable by putting the following in your |vimrc|:
 
 Solution: Just make a mapping like the following, in your |vimrc|:
 >
-    imap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 <
 
 ------------------------------------------------------------------------------
