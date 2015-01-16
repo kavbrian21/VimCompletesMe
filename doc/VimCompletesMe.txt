@@ -40,7 +40,7 @@ intelligently (depending on the context) use:
 2. File path completion     (|i_Ctrl-X_Ctrl-F|)
 3. Omni completion          (|i_Ctrl-X_Ctrl-F|)
 
-You can set *b:vcm_tab_complete* to one of the following to use a specific type
+You can set |b:vcm_tab_complete| to one of the following to use a specific type
 of completion:
 
 1. "dict"   - Dictionary completion |i_Ctrl-X_Ctrl-K|
@@ -57,7 +57,7 @@ The b:vcm_tab_complete makes a great |:autocmd| as follows:
 When none of the special completions above get any results, you can press Tab
 again to have VimCompletesMe switch the context to keyword completion. The
 context will be automatically switched back to the completion set in
-the *b:vcm_tab_complete* variable.
+the |b:vcm_tab_complete| variable.
 
 NOTE: The "dict" option requires the user to set |'dictionary'| in their
 |vimrc| file. In Unix, you can put the following in your ~/.vimrc:
