@@ -27,6 +27,7 @@ following options:
 |'b:vcm_tab_complete'|          Use a specific type of completion.
 |'g:vcm_direction'|             Controls the direction of the completion.
 |'g:vcm_s_tab_behavior'|        Controls the behavior of Shift-Tab.
+|'g:vcm_default_maps'|          Set up default maps (Tab + Shift Tab)
 
 ------------------------------------------------------------------------------
                                                          *'b:vcm_tab_complete'*
@@ -95,17 +96,26 @@ You can change this variable by putting the following in your |vimrc|:
 >
     let g:vcm_s_tab_behavior = 1
 <
+------------------------------------------------------------------------------
+                                                         *'g:vcm_default_maps'*
+Values: numeric                                                               ~
+Default: 1                                                                    ~
+
+Set up mappings for Tab and Shift-Tab. If you would like to use your
+own mappings, unset this variable by putting the following in your |vimrc|:
+>
+    let g:vcm_default_maps = 0
+<
 ==============================================================================
  3. FREQUENTLY ASKED QUESTIONS                             *VimCompletesMe-faq*
 
-1. When the popup menu is opened, how can I make the Enter key select the   ~
-   completion entry instead of creating a new line?                         ~
+1. When the popup menu is opened, how can I make the Enter key select the     ~
+   completion entry instead of creating a new line?                           ~
 
 Solution: Just make a mapping like the following, in your |vimrc|:
 >
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 <
-
 ------------------------------------------------------------------------------
 
 Template From: https://github.com/dahu/Area-41/
