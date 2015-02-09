@@ -63,9 +63,7 @@ function! s:vim_completes_me(shift_tab)
   " First fallback to keyword completion if special completion was already tried.
   if b:completion_tried
     let b:completion_tried = 0
-    if pumvisible()
-      return "\<C-e>" . dirs[dir]
-    endif
+    return "\<C-e>" . dirs[!dir]
   endif
 
   " Fallback
