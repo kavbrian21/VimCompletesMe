@@ -93,4 +93,5 @@ endif
 augroup VCM
   autocmd!
   autocmd InsertEnter * let b:completion_tried = 0
+  autocmd CompleteDone * let b:completion_tried = 0
 augroup END
