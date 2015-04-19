@@ -59,7 +59,7 @@ When none of the special completions above get any results, you can press Tab
 again to have VimCompletesMe switch the context to keyword completion. In some
 situations (like after completing something and then trying the context switch
 again without leaving insert mode), you may need a Vim version greater than
-7.3.589 to get the best context switch behavior. The context will be
+7.3.598 to get the best context switch behavior. The context will be
 automatically switched back to the completion set in the |b:vcm_tab_complete|
 variable.
 
