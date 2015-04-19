@@ -96,5 +96,7 @@ endif
 augroup VCM
   autocmd!
   autocmd InsertEnter * let b:completion_tried = 0
-  autocmd CompleteDone * let b:completion_tried = 0
+  if v:version > 703 || v:version == 703 && has('patch598')
+    autocmd CompleteDone * let b:completion_tried = 0
+  endif
 augroup END
