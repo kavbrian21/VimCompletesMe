@@ -43,8 +43,10 @@ function! s:vim_completes_me(shift_tab)
     return (a:shift_tab && !g:vcm_s_tab_behavior) ? "\<C-d>" : "\<Tab>"
   endif
 
-  " Figure out if user has started typing a path or a period
+  " Figure out if user has started typing a path or a period or an arrow
+  " operator
   let period = match(substr, '\.') != -1
+  let arrow_oper = match(substr, '->') != -1
   let file_path = (has('win32') || has('win64')) ? '\\' : '\/'
   let file_pattern = match(substr, file_path) != -1
 
@@ -58,6 +60,8 @@ function! s:vim_completes_me(shift_tab)
     endif
     let b:tab_complete_pos = pos
     return exp
+  elseif arrow_oper && (&omnifunc != '')
+    return "\<C-x>\<C-o>"
   endif
 
   " First fallback to keyword completion if special completion was already tried.
