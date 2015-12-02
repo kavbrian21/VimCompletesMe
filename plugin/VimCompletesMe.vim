@@ -52,7 +52,7 @@ function! s:vim_completes_me(shift_tab)
 
   if file_pattern
     return "\<C-x>\<C-f>"
-  elseif period && (&omnifunc != '')
+  elseif (period || arrow_oper) && (&omnifunc != '')
     if get(b:, 'tab_complete_pos', []) == pos
       let exp = "\<C-x>" . dirs[!dir]
     else
@@ -60,8 +60,6 @@ function! s:vim_completes_me(shift_tab)
     endif
     let b:tab_complete_pos = pos
     return exp
-  elseif arrow_oper && (&omnifunc != '')
-    return "\<C-x>\<C-o>"
   endif
 
   " First fallback to keyword completion if special completion was already tried.
