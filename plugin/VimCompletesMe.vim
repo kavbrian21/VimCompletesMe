@@ -82,7 +82,7 @@ function! s:vim_completes_me(shift_tab)
   elseif map ==? "vim"
     return "\<C-x>\<C-v>"
   else
-    return "\<C-x>" . dirs[!dir]
+    return dirs[!dir]
   endif
 endfunction
 
