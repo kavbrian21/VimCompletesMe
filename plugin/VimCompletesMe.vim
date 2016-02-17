@@ -75,12 +75,8 @@ function! s:vim_completes_me(shift_tab)
   let b:completion_tried = 1
   if map ==? "user"
     return "\<C-x>\<C-u>"
-  elseif map ==? "tags"
-    return "\<C-x>\<C-]>"
   elseif map ==? "omni"
     return "\<C-x>\<C-o>"
-  elseif map ==? "dict"
-    return "\<C-x>\<C-k>"
   elseif map ==? "vim"
     return "\<C-x>\<C-v>"
   else
