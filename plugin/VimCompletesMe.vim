@@ -60,6 +60,7 @@ function! s:vim_completes_me(shift_tab)
     if get(b:, 'tab_complete_pos', []) == pos
       let exp = "\<C-x>" . dirs[!dir]
     else
+      echo "Looking for members..."
       let exp = "\<C-x>\<C-o>"
     endif
     let b:tab_complete_pos = pos
@@ -77,6 +78,7 @@ function! s:vim_completes_me(shift_tab)
   if map ==? "user"
     return "\<C-x>\<C-u>"
   elseif map ==? "omni"
+    echo "Looking for members..."
     return "\<C-x>\<C-o>"
   elseif map ==? "vim"
     return "\<C-x>\<C-v>"
