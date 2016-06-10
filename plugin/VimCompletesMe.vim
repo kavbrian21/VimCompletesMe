@@ -43,7 +43,7 @@ function! s:vim_completes_me(shift_tab)
   " Figure out whether we should indent.
   let pos = getpos('.')
   let substr = matchstr(strpart(getline(pos[1]), 0, pos[2]-1), "[^ \t]*$")
-  if strlen(substr) == 0
+  if empty(substr)
     return (a:shift_tab && !g:vcm_s_tab_behavior) ? "\<C-d>" : "\<Tab>"
   endif
 
@@ -56,7 +56,7 @@ function! s:vim_completes_me(shift_tab)
 
   if file_pattern
     return "\<C-x>\<C-f>"
-  elseif omni_pattern && (&omnifunc != '')
+  elseif omni_pattern && (!empty(&omnifunc))
     if get(b:, 'tab_complete_pos', []) == pos
       let exp = "\<C-x>" . dirs[!dir]
     else
