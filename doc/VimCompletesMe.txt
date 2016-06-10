@@ -134,7 +134,7 @@ Solution: Just make a mapping like the following, in your |vimrc|:
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 <
 
-2. When pressing the Tab key, why is the the last popup item selected?     ~
+2. When pressing the Tab key, why is the last popup item selected?     ~
 
 This is because VimCompletesMe is invoking |i_Ctrl-P| by default for you.
 Pressing the Tab key will then cycle forwards the list, so some users are
