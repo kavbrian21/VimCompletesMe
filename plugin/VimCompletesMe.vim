@@ -33,11 +33,7 @@ function! s:vim_completes_me(shift_tab)
   let map = exists('b:vcm_tab_complete') ? b:vcm_tab_complete : ''
 
   if pumvisible()
-    if a:shift_tab
-      return dirs[!dir]
-    else
-      return dirs[dir]
-    endif
+    return a:shift_tab ? dirs[!dir] : dirs[dir]
   endif
 
   " Figure out whether we should indent.
