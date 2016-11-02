@@ -57,7 +57,7 @@ function! s:vim_completes_me(shift_tab)
       let exp = "\<C-x>" . dirs[!dir]
     else
       echo "Looking for members..."
-      let exp = "\<C-x>\<C-o>"
+      let exp = (!empty(&completefunc) && map ==? "user") ? "\<C-x>\<C-u>" : "\<C-x>\<C-o>"
     endif
     let b:tab_complete_pos = pos
     return exp
