@@ -52,7 +52,7 @@ of completion:
 
 The b:vcm_tab_complete makes a great |:autocmd| as follows:
 >
-    autocmd FileType ruby let b:vcm_tab_complete = "tags"
+    autocmd FileType ruby let b:vcm_tab_complete = "omni"
 <
 
 When none of the special completions above get any results, you can press Tab
@@ -71,7 +71,7 @@ to your |vimrc| file:
     autocomd FileType markdown,txt setlocal complete+=k/usr/share/dict/words
 <
 where */usr/share/dict/words* is a standard UNIX location for dictionary words.
-You can use any value here after the 'k' flag. See :help complete' for the
+You can use any value here after the 'k' flag. See :help 'complete' for the
 full documentation.
 ------------------------------------------------------------------------------
                                                             *'g:vcm_direction'*
