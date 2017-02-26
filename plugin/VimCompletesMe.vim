@@ -1,4 +1,4 @@
-" VimCompletesMe.vim - For super simple tab completion
+" VimCompletesMe.vim - Super simple tab completion
 " Maintainer:          Akshay Hegde <http://github.com/ajh17>
 " Version:             1.3
 " Website:             <http://github.com/ajh17/VimCompletesMe>
@@ -13,15 +13,12 @@ let g:loaded_VimCompletesMe = 1
 if !exists('g:vcm_s_tab_behavior')
   let g:vcm_s_tab_behavior = 0
 endif
-
 if !exists('g:vcm_direction')
   let g:vcm_direction = 'n'
 endif
-
 if !exists('g:vcm_default_maps')
   let g:vcm_default_maps = 1
 endif
-
 if !exists('g:vcm_omni_pattern')
   let g:vcm_omni_pattern = '\(\.\|\->\|::\)'
 endif
@@ -43,8 +40,6 @@ function! s:vim_completes_me(shift_tab)
     return (a:shift_tab && !g:vcm_s_tab_behavior) ? "\<C-d>" : "\<Tab>"
   endif
 
-  " Figure out if user has started typing a path or a period or an arrow
-  " operator
   let test_pattern = get(b:, 'vcm_omni_pattern', get(g:, 'vcm_omni_pattern'))
   let omni_pattern = match(substr, test_pattern) != -1
   let file_path = (has('win32') || has('win64')) ? '\\\|\/' : '\/'

@@ -8,7 +8,7 @@ Without any configuration, the Tab key will, depending on the context, offer:
   ([Ctrl-X_Ctrl-N](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-N))
 * File path completion when typing a path
   ([Ctrl-X_Ctrl-F](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-F))
-* Omni-completion after typing a period or an arrow operator
+* Omni-completion after typing a character specified by `g:vcm_omni_pattern`
   ([Ctrl-X_Ctrl-O](http://vimhelp.appspot.com/insert.txt.html#i_CTRL-X_CTRL-O))
 
 With a `b:vcm_tab_complete` variable, you can set the Tab key to use the
