@@ -1,6 +1,6 @@
 " VimCompletesMe.vim - Super simple tab completion
 " Maintainer:          Akshay Hegde <http://github.com/ajh17>
-" Version:             1.3
+" Version:             1.4
 " Website:             <http://github.com/ajh17/VimCompletesMe>
 
 " Vimscript Setup: {{{1
