@@ -45,9 +45,7 @@ function! s:vim_completes_me(shift_tab)
   let file_path = (has('win32') || has('win64')) ? '\\\|\/' : '\/'
   let file_pattern = match(substr, file_path) != -1
 
-  if file_pattern
-    return "\<C-x>\<C-f>"
-  elseif omni_pattern && (!empty(&omnifunc))
+  if omni_pattern && (!empty(&omnifunc))
     if get(b:, 'tab_complete_pos', []) == pos
       let exp = "\<C-x>" . dirs[!dir]
     else
@@ -56,6 +54,8 @@ function! s:vim_completes_me(shift_tab)
     endif
     let b:tab_complete_pos = pos
     return exp
+  elseif file_pattern
+    return "\<C-x>\<C-f>"
   endif
 
   " First fallback to keyword completion if special completion was already tried.
