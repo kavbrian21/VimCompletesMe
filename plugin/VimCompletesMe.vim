@@ -46,11 +46,13 @@ function! s:vim_completes_me(shift_tab)
   let is_file_pattern = match(substr, file_pattern) != -1
 
   if is_omni_pattern && (!empty(&omnifunc))
-    if get(b:, 'tab_complete_pos', []) == pos
+    " Check position so that we can fallback if at the same pos.
+    if get(b:, 'tab_complete_pos', []) == pos && b:completion_tried
       let exp = "\<C-x>" . dirs[!dir]
     else
       echo "Looking for members..."
       let exp = (!empty(&completefunc) && map ==? "user") ? "\<C-x>\<C-u>" : "\<C-x>\<C-o>"
+      let b:completion_tried = 1
     endif
     let b:tab_complete_pos = pos
     return exp
