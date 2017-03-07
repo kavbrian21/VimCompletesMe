@@ -20,7 +20,7 @@ if !exists('g:vcm_default_maps')
   let g:vcm_default_maps = 1
 endif
 if !exists('g:vcm_omni_pattern')
-  let g:vcm_omni_pattern = '\(\.\|\->\|::\)'
+  let g:vcm_omni_pattern = '\k\+\(\.\|->\|::\)\k*$'
 endif
 
 " Functions: {{{1
@@ -40,12 +40,12 @@ function! s:vim_completes_me(shift_tab)
     return (a:shift_tab && !g:vcm_s_tab_behavior) ? "\<C-d>" : "\<Tab>"
   endif
 
-  let test_pattern = get(b:, 'vcm_omni_pattern', get(g:, 'vcm_omni_pattern'))
-  let omni_pattern = match(substr, test_pattern) != -1
-  let file_path = (has('win32') || has('win64')) ? '\\\|\/' : '\/'
-  let file_pattern = match(substr, file_path) != -1
+  let omni_pattern = get(b:, 'vcm_omni_pattern', get(g:, 'vcm_omni_pattern'))
+  let is_omni_pattern = match(substr, omni_pattern) != -1
+  let file_pattern = (has('win32') || has('win64')) ? '\\\|\/' : '\/'
+  let is_file_pattern = match(substr, file_pattern) != -1
 
-  if omni_pattern && (!empty(&omnifunc))
+  if is_omni_pattern && (!empty(&omnifunc))
     if get(b:, 'tab_complete_pos', []) == pos
       let exp = "\<C-x>" . dirs[!dir]
     else
@@ -54,7 +54,7 @@ function! s:vim_completes_me(shift_tab)
     endif
     let b:tab_complete_pos = pos
     return exp
-  elseif file_pattern
+  elseif is_file_pattern
     return "\<C-x>\<C-f>"
   endif
 
