@@ -26,7 +26,8 @@ following options:
 
 |'b:vcm_tab_complete'|          Use a specific type of completion.
 |'g:vcm_direction'|             Controls the direction of the completion.
-|'g:vcm_s_tab_behavior'|        Controls the behavior of Shift-Tab.
+|'g:vcm_s_tab_behavior'|        Controls the indentation behavior of Shift-Tab.
+|'g:vcm_s_tab_mapping'|         Defines the custom actions of Shift-Tab.
 |'g:vcm_default_maps'|          Set up default maps (Tab + Shift Tab)
 |'b:vcm_omni_pattern|           Local pattern to trigger Omni-completion
 |'g:vcm_omni_pattern|           Global pattern to trigger Omni-completion
@@ -85,22 +86,46 @@ You can change it to cycle backwards through the list by putting the following
 in your |vimrc|:
 >
     let g:vcm_direction = 'p'
-<
+
 ------------------------------------------------------------------------------
                                                        *'g:vcm_s_tab_behavior'*
 Values: numeric                                                               ~
 Default: 0                                                                    ~
 
-Controls the shift-tab behavior used by VimCompletesMe.
+Controls the shift-tab indentation behavior used by VimCompletesMe.
 
-By default, pressing |<S-Tab>| after a space, or a tab will de-indent the
-current line.
+By default, pressing |<S-Tab>| after a space or a tab will remove one
+indentation level like <C-h> (see |i_Ctrl-h|), with the difference that
+|<S-Tab>| won't join with the line above if the cursor is at the first
+column.
 
 If you change this option to 1, |<S-Tab>| will work just like |<Tab>|.
 
 You can change this variable by putting the following in your |vimrc|:
 >
     let g:vcm_s_tab_behavior = 1
+<
+------------------------------------------------------------------------------
+                                                       *'g:vcm_s_tab_mapping'*
+Values: string                                                               ~
+Default: unset                                                                    ~
+
+Defines the action commands for |<S-Tab>|. If not set, it will trigger the
+completion just like |<Tab>|, otherwise, the value will correspond to the
+actions performed by VimCompletesMe.
+
+You can set this variable by putting the following in your |vimrc|:
+>
+    let g:vcm_s_tab_mapping = "\<actions>"
+
+Where <actions> are the commands to be executed. Notice that VimCompletesMe
+acts in |insertmode|, therefore, to perform normal mode commands, <actions>
+should start with |<Esc>| or <C-o> (see |i_Ctrl-o|).
+
+For example, to make |<S-Tab>| jump one character (useful for jumping
+immediate closing parentheses or brackets) just do:
+>
+    let g:vcm_s_tab_mapping = "\<C-o>a"
 <
 ------------------------------------------------------------------------------
                                                          *'g:vcm_default_maps'*

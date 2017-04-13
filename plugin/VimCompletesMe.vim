@@ -33,11 +33,16 @@ function! s:vim_completes_me(shift_tab)
     return a:shift_tab ? dirs[!dir] : dirs[dir]
   endif
 
-  " Figure out whether we should indent.
+  " Figure out whether we should indent/de-indent.
   let pos = getpos('.')
   let substr = matchstr(strpart(getline(pos[1]), 0, pos[2]-1), "[^ \t]*$")
   if empty(substr)
-    return (a:shift_tab && !g:vcm_s_tab_behavior) ? "\<C-d>" : "\<Tab>"
+      let l:s_tab_deindent = col('.') > 1 ? "\<C-h>" : ""
+      return (a:shift_tab && !g:vcm_s_tab_behavior) ? l:s_tab_deindent : "\<Tab>"
+  endif
+
+  if a:shift_tab && exists('g:vcm_s_tab_mapping')
+      return g:vcm_s_tab_mapping
   endif
 
   let omni_pattern = get(b:, 'vcm_omni_pattern', get(g:, 'vcm_omni_pattern'))
