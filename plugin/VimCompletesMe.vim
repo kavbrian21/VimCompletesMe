@@ -37,7 +37,7 @@ function! s:vim_completes_me(shift_tab)
   let pos = getpos('.')
   let substr = matchstr(strpart(getline(pos[1]), 0, pos[2]-1), "[^ \t]*$")
   if empty(substr)
-      let l:s_tab_deindent = col('.') > 1 ? "\<C-h>" : ""
+      let s_tab_deindent = pos[2] > 1 ? "\<C-h>" : ""
       return (a:shift_tab && !g:vcm_s_tab_behavior) ? l:s_tab_deindent : "\<Tab>"
   endif
 
