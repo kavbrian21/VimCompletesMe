@@ -69,7 +69,7 @@ items from things like a dictionary or tags file. For example, if you wanted
 dictionary completion for markdown and text files, you could add the following
 to your |vimrc| file:
 >
-    autocomd FileType markdown,txt setlocal complete+=k/usr/share/dict/words
+    autocmd FileType markdown,txt setlocal complete+=k/usr/share/dict/words
 <
 where */usr/share/dict/words* is a standard UNIX location for dictionary words.
 You can use any value here after the 'k' flag. See :help 'complete' for the
