@@ -49,6 +49,7 @@ function! s:vim_completes_me(shift_tab)
   let is_omni_pattern = match(substr, omni_pattern) != -1
   let file_pattern = (has('win32') || has('win64')) ? '\\\|\/' : '\/'
   let is_file_pattern = match(substr, file_pattern) != -1
+  let return_exp = "\<C-p>\<C-p>"
 
   if is_omni_pattern && (!empty(&omnifunc))
     " Check position so that we can fallback if at the same pos.
@@ -56,7 +57,6 @@ function! s:vim_completes_me(shift_tab)
       let exp = "\<C-x>" . dirs[dir]
     else
       echo "Looking for members..."
-      let return_exp = "\<C-p>\<C-p>"
       if !empty(&completefunc) && map ==? "user"
         let exp = dir ? "\<C-x>\<C-u>" : "\<C-x>\<C-u>" . return_exp
       else
@@ -67,7 +67,7 @@ function! s:vim_completes_me(shift_tab)
     let b:tab_complete_pos = pos
     return exp
   elseif is_file_pattern
-    return "\<C-x>\<C-f>"
+    return dir ? "\<C-x>\<C-f>" : "\<C-x>\<C-f>" . return_exp
   endif
 
   " First fallback to keyword completion if special completion was already tried.
@@ -79,12 +79,12 @@ function! s:vim_completes_me(shift_tab)
   " Fallback
   let b:completion_tried = 1
   if map ==? "user"
-    return "\<C-x>\<C-u>"
+    return dir ? "\<C-x>\<C-u>" : "\<C-x>\<C-u>" . return_exp
   elseif map ==? "omni"
     echo "Looking for members..."
-    return "\<C-x>\<C-o>"
+    return dir ? "\<C-x>\<C-o>" : "\<C-x>\<C-o>" . return_exp
   elseif map ==? "vim"
-    return "\<C-x>\<C-v>"
+    return dir ? "\<C-x>\<C-v>" : "\<C-x>\<C-v>" . return_exp
   else
     return dirs[!dir]
   endif
