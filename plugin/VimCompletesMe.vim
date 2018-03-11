@@ -25,12 +25,12 @@ endif
 
 " Functions: {{{1
 function! s:vim_completes_me(shift_tab)
-  let dirs = ["\<c-p>", "\<c-n>"]
+  let dirs = ["\<c-n>", "\<c-p>"]
   let dir = g:vcm_direction =~? '[nf]'
   let map = exists('b:vcm_tab_complete') ? b:vcm_tab_complete : ''
 
   if pumvisible()
-    return a:shift_tab ? dirs[!dir] : dirs[dir]
+    return a:shift_tab ? dirs[dir] : dirs[!dir]
   endif
 
   " Figure out whether we should indent/de-indent.
