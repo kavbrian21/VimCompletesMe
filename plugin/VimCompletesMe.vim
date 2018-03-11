@@ -70,13 +70,13 @@ function! s:vim_completes_me(shift_tab)
     return dir ? "\<C-x>\<C-f>" : "\<C-x>\<C-f>" . return_exp
   endif
 
-  " First fallback to keyword completion if special completion was already tried.
+  " If we already tried special completion, fallback to keyword completion
   if exists('b:completion_tried') && b:completion_tried
     let b:completion_tried = 0
     return "\<C-e>" . dirs[!dir]
   endif
 
-  " Fallback
+  " Fallback to user's vcm_tab_complete or if not set, to keyword completion
   let b:completion_tried = 1
   if map ==? "user"
     return dir ? "\<C-x>\<C-u>" : "\<C-x>\<C-u>" . return_exp
