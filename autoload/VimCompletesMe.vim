@@ -3,7 +3,7 @@
 " Version:             1.5
 " Website:             <http://github.com/ajh17/VimCompletesMe>
 
-function! vimcompletesme#vim_completes_me(shift_tab)
+function! VimCompletesMe#vim_completes_me(shift_tab)
   let dirs = ["\<c-n>", "\<c-p>"]
   let dir = g:vcm_direction =~? '[nf]'
   let map = exists('b:vcm_tab_complete') ? b:vcm_tab_complete : ''
