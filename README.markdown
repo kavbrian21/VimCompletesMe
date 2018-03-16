@@ -38,8 +38,7 @@ completion for all vim filetypes:
 ## Installation
 If you use Vim 8 or better, simply copy and paste:
 
-    mkdir -p ~/.vim/pack/vendor/start/ && \
-        git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe
+    git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe
 
 Once the helptags have been generated (`:helptags ALL`), see `:h VimCompletesMe`
 for usage.
