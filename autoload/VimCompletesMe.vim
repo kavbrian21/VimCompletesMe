@@ -1,7 +1,7 @@
 " VimCompletesMe.vim - Super simple tab completion
-" Maintainer:          Akshay Hegde <http://github.com/ajh17>
-" Version:             1.5.1
-" Website:             <http://github.com/ajh17/VimCompletesMe>
+" Maintainer:          Akshay Hegde <http://github.com/ackyshake>
+" Version:             1.5.2
+" Website:             <http://github.com/ackyshake/VimCompletesMe>
 
 function! VimCompletesMe#vim_completes_me(shift_tab)
   let dirs = ["\<c-n>", "\<c-p>"]
