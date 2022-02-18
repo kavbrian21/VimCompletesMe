@@ -31,8 +31,14 @@ function! VimCompletesMe#vim_completes_me(shift_tab)
   if !empty(&omnifunc) && match(substr, omni_pattern) != -1
     " Check position so that we can fallback if at the same pos.
     if get(b:, 'tab_complete_pos', []) == pos && b:completion_tried
-      echo "Falling back to keyword"
-      let exp = "\<C-x>" . dirs[!dir]
+      let word = matchstr(getline('.'), '\k\+\%' . virtcol('.') . 'v')
+      if !empty(pos) && index([0, pos[1]], search(word, 'nw')) == -1
+        echo "Falling back to local keyword completion"
+        let exp = "\<C-e>\<C-x>" . dirs[!dir]
+      else
+        echo "Falling back to generic keyword completion"
+        let exp = "\<C-e>" . dirs[!dir]
+      endif
     else
       echo "Looking for members..."
       if !empty(&completefunc) && map ==? "user"
